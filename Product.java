@@ -1,21 +1,41 @@
-/**
- * Created by eco on 26.06.15.
- */
-public class Product {
-    private Ingredients [] ingredients;
-    private String productName;
-    Double price;
+public abstract class Product {
+    protected String productName;
+    protected double price;
+    protected double quantity;
 
-    public Product(String productName){
+    public Product(String name, double quantity){
+        this.productName = name;
+        this.quantity = quantity;
+    }
+
+    public Product(){
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
         this.productName = productName;
-        ingredients = new Ingredients[0];
-        this.price = 0.0;
-    }
-    public void addIngredients(Ingredients ingredients){
-        this.ingredients[0] = ingredients;
     }
 
-    public void setPrice(Double newPrice) {
-        this.price = newPrice;
+    protected void renameProduct(String newName){
+        this.productName = newName;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public double getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(double quantity) {
+        this.quantity = quantity;
     }
 }
